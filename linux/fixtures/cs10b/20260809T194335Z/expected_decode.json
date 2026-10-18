@@ -1,0 +1,17 @@
+{
+  "fixture": "cs10b-20260809T194335Z",
+  "frame_hex": "1012201ed2012111c51077088e07f70085ca",
+  "opcode": "0x10",
+  "weight_raw_u16_be": 7890,
+  "weight_formula": "int.from_bytes(frame[3:5], 'big') / 100",
+  "weight_kg": 78.9,
+  "confidence": "high",
+  "opaque_words": [
+    4549,
+    4215,
+    2190,
+    2039,
+    133
+  ],
+  "condition": "feet_handle_usbc_connected_on_ground"
+}

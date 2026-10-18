@@ -1,0 +1,23 @@
+{
+  "schema_version": 2,
+  "fixture_id": "handle-contact-complete",
+  "sanitized": true,
+  "condition": "handle_contact",
+  "expected_quality": "accepted",
+  "expected_completion": "complete",
+  "synthetic_weight_raw_u16_be": 5000,
+  "notifications": [
+    "1204200036",
+    "1404200038",
+    "2104200045",
+    "10122013880121010102020303040405051d",
+    "10122013880121010102020303040405051d",
+    "10122013880121010102020303040405051d",
+    "1012201388012206060707080809090a0a50",
+    "1012201388012206060707080809090a0a50",
+    "1012201388012206060707080809090a0a50"
+  ],
+  "ack_hex": "1f0620102176",
+  "opaque_block_a": [257, 514, 771, 1028, 1285],
+  "opaque_block_b": [1542, 1799, 2056, 2313, 2570]
+}

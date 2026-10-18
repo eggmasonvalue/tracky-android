@@ -1,0 +1,16 @@
+config:
+  MD013: false
+  MD024:
+    siblings_only: true
+  MD033: false
+
+globs:
+  - "**/*.md"
+
+ignores:
+  - ".gradle/**"
+  - ".kotlin/**"
+  - ".pi/**"
+  - "**/.venv/**"
+  - "app/build/**"
+  - "build/**"

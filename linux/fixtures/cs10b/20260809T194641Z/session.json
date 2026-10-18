@@ -1,0 +1,208 @@
+{
+  "schema_version": 1,
+  "capture_id": "cs10b-20260809T194641Z",
+  "status": "successful_scaleclient_weighin",
+  "condition": "feet_handle_usbc_unplugged",
+  "source": {
+    "jsonl": "captures/handle-unplugged-20260809T194641Z.jsonl",
+    "client": "tracky_mcp.ble.ScaleClient",
+    "note": "Event log from product ScaleClient (not capture_ble_handshake). Host writes not logged in this jsonl."
+  },
+  "device": {
+    "alias": "cs10b-04",
+    "advertised_name": "QN-Scale",
+    "model_label": "TR-CS10B",
+    "address_hash": "000000000000",
+    "address_hash_algorithm": "sha256(uppercase Bluetooth address with colons removed), first 12 hexadecimal characters"
+  },
+  "host": {
+    "os": "Linux",
+    "adapter": "hci0",
+    "central": "BlueZ/Bleak ScaleClient"
+  },
+  "unit": {
+    "requested": "kg",
+    "unit_byte": 1
+  },
+  "notifications": [
+    {
+      "hex": "121220d1e0460003ff07930840080503002f",
+      "opcode": 18
+    },
+    {
+      "hex": "140b200000010000000040",
+      "opcode": 20
+    },
+    {
+      "hex": "2105200147",
+      "opcode": 33
+    },
+    {
+      "hex": "1012201ed201210000000000000000000054",
+      "opcode": 16
+    },
+    {
+      "hex": "1012201ed201210000000000000000000054",
+      "opcode": 16
+    },
+    {
+      "hex": "1012201ed201210000000000000000000054",
+      "opcode": 16
+    },
+    {
+      "hex": "1012201ed201210000000000000000000054",
+      "opcode": 16
+    },
+    {
+      "hex": "1012201ed201210000000000000000000054",
+      "opcode": 16
+    },
+    {
+      "hex": "1012201ed201210000000000000000000054",
+      "opcode": 16
+    },
+    {
+      "hex": "1012201ed201210000000000000000000054",
+      "opcode": 16
+    },
+    {
+      "hex": "1012201ed201210000000000000000000054",
+      "opcode": 16
+    },
+    {
+      "hex": "1012201ed201210000000000000000000054",
+      "opcode": 16
+    },
+    {
+      "hex": "1012201ed201210000000000000000000054",
+      "opcode": 16
+    },
+    {
+      "hex": "1012201ed201210000000000000000000054",
+      "opcode": 16
+    },
+    {
+      "hex": "1012201ed201210000000000000000000054",
+      "opcode": 16
+    },
+    {
+      "hex": "1012201ed201210000000000000000000054",
+      "opcode": 16
+    },
+    {
+      "hex": "1012201ed201210000000000000000000054",
+      "opcode": 16
+    },
+    {
+      "hex": "1012201ed201210000000000000000000054",
+      "opcode": 16
+    },
+    {
+      "hex": "1012201ed201210000000000000000000054",
+      "opcode": 16
+    },
+    {
+      "hex": "1012201ed201210000000000000000000054",
+      "opcode": 16
+    },
+    {
+      "hex": "1012201ed201210000000000000000000054",
+      "opcode": 16
+    },
+    {
+      "hex": "1012201ed201210000000000000000000054",
+      "opcode": 16
+    },
+    {
+      "hex": "1012201ed201210000000000000000000054",
+      "opcode": 16
+    },
+    {
+      "hex": "1012201ed201210000000000000000000054",
+      "opcode": 16
+    },
+    {
+      "hex": "1012201ed201210000000000000000000054",
+      "opcode": 16
+    },
+    {
+      "hex": "1012201ed201210000000000000000000054",
+      "opcode": 16
+    },
+    {
+      "hex": "1012201ed201210000000000000000000054",
+      "opcode": 16
+    },
+    {
+      "hex": "1012201ed201210000000000000000000054",
+      "opcode": 16
+    },
+    {
+      "hex": "1012201ed201210000000000000000000054",
+      "opcode": 16
+    },
+    {
+      "hex": "1012201ed201210000000000000000000054",
+      "opcode": 16
+    },
+    {
+      "hex": "1012201ed201210000000000000000000054",
+      "opcode": 16
+    },
+    {
+      "hex": "1012201ed201210000000000000000000054",
+      "opcode": 16
+    },
+    {
+      "hex": "1012201ed201210000000000000000000054",
+      "opcode": 16
+    },
+    {
+      "hex": "1012201ed201210000000000000000000054",
+      "opcode": 16
+    },
+    {
+      "hex": "1012201ed201210000000000000000000054",
+      "opcode": 16
+    },
+    {
+      "hex": "1012201ed201210000000000000000000054",
+      "opcode": 16
+    }
+  ],
+  "decode_hypotheses": {
+    "weight_formula": "int.from_bytes(frame[3:5], 'big') / 100",
+    "weight_only_count": 0,
+    "opaque_word_block_count": 33,
+    "opaque_words_all_zero_count": 33,
+    "opaque_words_nonzero_count": 0,
+    "opaque_word_block_0x10_examples": [
+      {
+        "frame_hex": "1012201ed201210000000000000000000054",
+        "weight_kg": 78.9,
+        "b5": 1,
+        "b6": 33,
+        "opaque_words": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ]
+  },
+  "summary": {
+    "measurement_count": 33,
+    "stable_weight_kg": 78.9,
+    "last_opaque_words": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "b5": 1,
+    "b6": 33
+  }
+}

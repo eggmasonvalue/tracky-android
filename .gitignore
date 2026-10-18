@@ -1,7 +1,6 @@
 *.iml
 .gradle/
 .idea/
-.pi/
 local.properties
 /build/
 **/build/
@@ -13,3 +12,23 @@ captures/
 .kotlin/
 .DS_Store
 Thumbs.db
+
+# Python
+.venv/
+.venv-capture/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+dist/
+*.egg-info/
+*.db
+*.sqlite
+*.sqlite3
+.env
+node_modules/
+scratch/

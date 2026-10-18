@@ -1,0 +1,19 @@
+{
+  "schema_version": 2,
+  "fixture_id": "foot-only-interrupted",
+  "sanitized": true,
+  "condition": "foot_only_interrupted",
+  "expected_quality": "indeterminate",
+  "expected_completion": "interrupted",
+  "synthetic_weight_raw_u16_be": 5000,
+  "notifications": [
+    "1204200036",
+    "1404200038",
+    "2104200045",
+    "10122013880121012002400360048005a0ee",
+    "10122013880121012102410361048105a1f3",
+    "10122013880121012002400360048005a0ee"
+  ],
+  "ack_hex": "1f0620102176",
+  "observed_note": "Nonzero words vary and packet 2 is absent; nonzero alone is not accepted quality."
+}

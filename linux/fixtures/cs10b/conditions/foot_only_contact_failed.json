@@ -1,0 +1,23 @@
+{
+  "schema_version": 2,
+  "fixture_id": "foot-only-contact-failed",
+  "sanitized": true,
+  "condition": "foot_only_err2",
+  "expected_quality": "contact_failed",
+  "expected_completion": "complete",
+  "synthetic_weight_raw_u16_be": 5000,
+  "notifications": [
+    "1204200036",
+    "1404200038",
+    "2104200045",
+    "1012201388012100000000000000000000ff",
+    "1012201388012100000000000000000000ff",
+    "1012201388012100000000000000000000ff",
+    "101220138801220000000000000000000000",
+    "101220138801220000000000000000000000",
+    "101220138801220000000000000000000000"
+  ],
+  "ack_hex": "1f0620102176",
+  "opaque_block_a": [0, 0, 0, 0, 0],
+  "opaque_block_b": [0, 0, 0, 0, 0]
+}

@@ -1,0 +1,46 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "tracky-mcp"
+version = "0.1.0"
+description = "Linux acquisition appliance and read-only MCP projection for Tracky CS10B scales"
+requires-python = ">=3.12"
+dependencies = ["tzdata>=2025.2"]
+license = { file = "LICENSE" }
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+
+[project.optional-dependencies]
+ble = ["bleak>=0.22"]
+mcp = ["mcp>=2.0,<3"]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.6",
+]
+
+[project.scripts]
+tracky-mcp = "tracky_mcp.mcp.__main__:main"
+tracky-daemon = "tracky_mcp.daemon:main"
+tracky-sync-server = "tracky_mcp.sync_server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/tracky_mcp"]
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]

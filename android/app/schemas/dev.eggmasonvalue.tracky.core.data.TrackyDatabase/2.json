@@ -1,0 +1,147 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 2,
+    "identityHash": "e9802ae8e7685f484900af9833eba8b7",
+    "entities": [
+      {
+        "tableName": "import_ledger",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`client_record_id` TEXT NOT NULL, `source_session_id` TEXT NOT NULL, `client_record_version` INTEGER NOT NULL, `contract_version` INTEGER NOT NULL, `selection_policy_version` INTEGER NOT NULL, `derivation_version` INTEGER, `disposition` TEXT NOT NULL, `health_connect_record_id` TEXT, `attempt_count` INTEGER NOT NULL, `last_attempt_epoch_ms` INTEGER, `next_retry_epoch_ms` INTEGER, `last_error_code` TEXT, `last_error_message` TEXT, `updated_at_epoch_ms` INTEGER NOT NULL, PRIMARY KEY(`client_record_id`))",
+        "fields": [
+          {
+            "fieldPath": "clientRecordId",
+            "columnName": "client_record_id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sourceSessionId",
+            "columnName": "source_session_id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "clientRecordVersion",
+            "columnName": "client_record_version",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "contractVersion",
+            "columnName": "contract_version",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "selectionPolicyVersion",
+            "columnName": "selection_policy_version",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "derivationVersion",
+            "columnName": "derivation_version",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "disposition",
+            "columnName": "disposition",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "healthConnectRecordId",
+            "columnName": "health_connect_record_id",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "attemptCount",
+            "columnName": "attempt_count",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lastAttemptEpochMs",
+            "columnName": "last_attempt_epoch_ms",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "nextRetryEpochMs",
+            "columnName": "next_retry_epoch_ms",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "lastErrorCode",
+            "columnName": "last_error_code",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "lastErrorMessage",
+            "columnName": "last_error_message",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "updatedAtEpochMs",
+            "columnName": "updated_at_epoch_ms",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "client_record_id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_import_ledger_source_session_id_client_record_version",
+            "unique": true,
+            "columnNames": [
+              "source_session_id",
+              "client_record_version"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_import_ledger_source_session_id_client_record_version` ON `${TABLE_NAME}` (`source_session_id`, `client_record_version`)"
+          },
+          {
+            "name": "index_import_ledger_disposition",
+            "unique": false,
+            "columnNames": [
+              "disposition"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_import_ledger_disposition` ON `${TABLE_NAME}` (`disposition`)"
+          }
+        ]
+      },
+      {
+        "tableName": "sync_state",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`state_id` TEXT NOT NULL, `cursor` TEXT, PRIMARY KEY(`state_id`))",
+        "fields": [
+          {
+            "fieldPath": "stateId",
+            "columnName": "state_id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cursor",
+            "columnName": "cursor",
+            "affinity": "TEXT"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "state_id"
+          ]
+        }
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'e9802ae8e7685f484900af9833eba8b7')"
+    ]
+  }
+}

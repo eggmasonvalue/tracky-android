@@ -1,0 +1,10 @@
+{
+  "fixture": "cs10b-20260809T182636Z",
+  "frame_hex": "1012201ee600110000000000000000000057",
+  "opcode": "0x10",
+  "weight_raw_u16_be": 7910,
+  "weight_formula": "int.from_bytes(frame[3:5], 'big') / 100",
+  "weight_kg": 79.1,
+  "confidence": "high",
+  "opaque_words": []
+}

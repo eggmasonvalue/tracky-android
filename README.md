@@ -1,81 +1,57 @@
-# Tracky for Android
+# Tracky
 
-A local-first native Android weigh-in instrument for one Tracky TS-CS10B / TR-CS10B scale. It scans for the observed `QN-Scale`, connects directly over BLE, performs the capture-backed FFF0/FFF1/FFF2 handshake, displays each live weight observation, and stores the complete ordered RX/TX evidence locally.
+Private, local-first acquisition and Health Connect integration for the Tracky `TS-CS10B` / `TR-CS10B` eight-electrode scale.
 
-## Current slice
+## Architecture
 
-- Material 3 Expressive single-activity UI with dynamic color, curated light/dark palettes, edge-to-edge layout, expressive motion/loading, accessible instrument states, history, evidence detail, and major-state previews.
-- Explicit permission, scan, connection, service discovery, notification, handshake, measurement, stopping, disconnection, Bluetooth-off, and recoverable-failure states.
-- Pure Kotlin CS10B checksum, command builders, frame decoder, and handshake state machine, covered by sanitized fixture goldens.
-- Foreground-only Android `BluetoothGatt` transport with attempt isolation, serialized acknowledged writes, timeouts, deterministic cleanup, and no address exposure in UI or normal logs.
-- Room sessions and immutable ordered raw frame evidence. Explicit **Stop & save** closes the recording boundary; cancellation or transport failure retains an aborted partial session.
-- Display-only kg/lb conversion. The protocol remains configured for the captured kg path.
-
-The app does **not** average frames or select a final/stable measurement. History surfaces the most recently observed frame only as an observation, never as a scientifically selected result.
-
-## Build
-
-Requirements:
-
-- JDK 17
-- Android SDK platform 37 and a compatible Build Tools installation
-- Network access for first dependency resolution
-
-Set the SDK path in an uncommitted `local.properties`, then run:
-
-```properties
-sdk.dir=/path/to/Android/Sdk
+```text
+Scale → Linux acquisition appliance → SQLite system of record
+                                  ├→ on-demand MCP → agent skill
+                                  └→ Android bridge → Health Connect
 ```
+
+Linux is the only BLE and scale-protocol owner. MCP reads captured history for agents. Android is a non-launcher background projection: it synchronizes canonical observations with authenticated HTTPS, reads (but never writes) Health Connect height, and writes idempotent records. Weight projection is implemented. Derived metrics remain disabled until the exact QN scale-family formulas are recovered with traceable coefficients, applicability rules, and vendor-output parity tests.
+
+See:
+
+- [`context/MAP.md`](context/MAP.md) — module boundaries and data flow
+- [`context/DECISIONS.md`](context/DECISIONS.md) — durable tradeoffs
+- [`context/CONVENTIONS.md`](context/CONVENTIONS.md) — coding and verification rules
+- [`context/PROTOCOL.md`](context/PROTOCOL.md) — evidence-graded protocol knowledge
+- [`context/DERIVATION.md`](context/DERIVATION.md) — BIA inputs and coefficient-validation handoff
+- [`contracts/README.md`](contracts/README.md) — target cross-component contract
+- [`context/DEPLOYMENT.md`](context/DEPLOYMENT.md) — target deployment
+
+## Repository
+
+```text
+android/    Non-launcher Android Health Connect projection and import ledger
+linux/      Python BlueZ acquisition, SQLite, sync API, and MCP implementation
+contracts/  Shared observation contract; schema/fixture integration pending
+skills/     Agent-facing analysis skill
+context/    Canonical project map, decisions, conventions, and focused references
+```
+
+## Development
+
+Linux:
 
 ```bash
-./gradlew testDebugUnitTest assembleDebug lintDebug
+cd linux
+uv sync --python 3.13 --extra dev --extra ble --extra mcp
+uv run pytest
+uv run ruff check src tests
 ```
 
-The debug APK is written to `app/build/outputs/apk/debug/app-debug.apk`.
+Android:
 
-Pinned build/UI stack:
+```bash
+cd android
+./gradlew testDebugUnitTest lintDebug assembleDebug
+```
 
-- Android Gradle Plugin `9.3.2`, Gradle `9.7.1`, Kotlin `2.4.10`, KSP `2.3.11`
-- Compose alpha BOM `2026.08.01`
-- Compose Material 3 `1.5.0-alpha27`
-- Activity Compose `1.13.0`, Lifecycle `2.11.0`, Navigation `2.10.0`
-- Room `2.8.4`, coroutines `1.11.0`
-- `compileSdk`, `targetSdk`, and `minSdk` 37
-
-Material 3 alpha is intentional: this personal app prioritizes the current official Expressive theme, motion scheme, loading indicator, and wavy progress APIs. See the official [Material 3 releases](https://developer.android.com/jetpack/androidx/releases/compose-material3) and [API reference](https://developer.android.com/reference/kotlin/androidx/compose/material3/package-summary).
-
-## Protocol and evidence
-
-The behavioral reference is [`eggmasonvalue/tracky-mcp`](https://github.com/eggmasonvalue/tracky-mcp) at commit `473b39bc63179fc626406ee4e2448403d157002e`. Exact fixture provenance is recorded in [`docs/PROTOCOL_PROVENANCE.md`](docs/PROTOCOL_PROVENANCE.md).
-
-Capture-backed behavior:
-
-- advertised name `QN-Scale`; FFE0/FFF0 advertising is a candidate signal,
-- connected service FFF0, FFF1 notifications, FFF2 writes,
-- `0x12` info → unit/time writes → `0x14` → time sync → `0x21` → two `0xA0` writes → repeated `0x10` notifications,
-- for the confirmed 18-byte `0x10` layout, unsigned BE bytes 3–4 divided by 100 are kilograms,
-- bytes 5 and 6 and all five BE words at bytes 7–16 are preserved.
-
-The five-word block is unitless raw evidence. Its electrical units, frequencies, body segments, and physiological meaning are unknown; an all-zero block is valid recorded evidence. No body-composition formulas or medical claims are implemented.
-
-## Verification status
-
-Verified in the development environment:
-
-- dependency resolution and Material 3 `1.5.0-alpha27` selection,
-- debug Kotlin/Java compilation, Room KSP generation, Compose preview compilation,
-- JVM protocol, BLE policy, and data invariant tests,
-- debug APK assembly and Android lint,
-- dependency graph inspection for accidental vendor/cloud/analytics SDKs.
-
-Not yet verified on hardware:
-
-- Android 17 permission/system-dialog behavior on the Pixel 10,
-- scanning, connection timing, GATT callback behavior, and handshake writes against the physical scale,
-- visual motion, dynamic color, accessibility, and haptic feel on the target phone.
-
-The smallest next step is to install the debug APK on the Pixel 10, keep the app foregrounded, wake the scale, perform one short weigh-in, tap **Stop & save**, and compare the saved ordered RX/TX hex against the reference handshake while confirming that no Bluetooth address appears in UI or logs.
+The current branch is an architectural migration, not a deployment-ready release. Android has no ordinary launcher entry; Health Connect opens its rationale/onboarding surface. Configure an HTTPS endpoint and bearer token through that surface. Run `todo list` for current implementation work.
 
 ## License
 
-MIT. No vendor SDK, cloud service, telemetry, ads, authentication, or opaque body-composition implementation is included.
+Tracky source code is licensed under the [MIT License](LICENSE). Bundled third-party assets retain their own compatible notices. The bundled Google Sans Flex Android asset is the official v4.007 release and includes its SIL Open Font License 1.1 notice under `android/app/src/main/assets/licenses/`.

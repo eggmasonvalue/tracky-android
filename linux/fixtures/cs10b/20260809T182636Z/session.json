@@ -1,0 +1,3362 @@
+{
+  "schema_version": 1,
+  "capture_id": "cs10b-20260809T182636Z",
+  "status": "successful_linux_handshake",
+  "source": {
+    "jsonl": "captures/handshake-20260809T182636Z.jsonl",
+    "btsnoop_reference": "captures/cs10b-hs-20260809T182636Z.btsnoop",
+    "source_event_count": 300,
+    "included_event_count": 161,
+    "omitted_records": {
+      "event": "weight_hypothesis",
+      "count": 139,
+      "reason": "The capture helper used an obsolete offset; corrected decode hypotheses below are based on raw hex."
+    }
+  },
+  "device": {
+    "alias": "cs10b-01",
+    "advertised_name": "QN-Scale",
+    "model_label": "TR-CS10B",
+    "model_description": "Smart Body Fat Scale",
+    "address_hash": "000000000000",
+    "address_hash_algorithm": "sha256(uppercase Bluetooth address with colons removed), first 12 hex characters"
+  },
+  "host": {
+    "os": "Linux",
+    "adapter": "hci0",
+    "central": "BlueZ/Bleak"
+  },
+  "gatt": [
+    {
+      "service_uuid": "0000180a-0000-1000-8000-00805f9b34fb",
+      "characteristics": [
+        {
+          "uuid": "00002a23-0000-1000-8000-00805f9b34fb",
+          "properties": [
+            "read"
+          ],
+          "handle": 12
+        },
+        {
+          "uuid": "00002a26-0000-1000-8000-00805f9b34fb",
+          "properties": [
+            "read"
+          ],
+          "handle": 10
+        },
+        {
+          "uuid": "00002a29-0000-1000-8000-00805f9b34fb",
+          "properties": [
+            "read"
+          ],
+          "handle": 8
+        },
+        {
+          "uuid": "00002a25-0000-1000-8000-00805f9b34fb",
+          "properties": [
+            "read"
+          ],
+          "handle": 14
+        }
+      ]
+    },
+    {
+      "service_uuid": "0000fff0-0000-1000-8000-00805f9b34fb",
+      "characteristics": [
+        {
+          "uuid": "0000fff2-0000-1000-8000-00805f9b34fb",
+          "properties": [
+            "write-without-response",
+            "write"
+          ],
+          "handle": 20
+        },
+        {
+          "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+          "properties": [
+            "notify"
+          ],
+          "handle": 17
+        }
+      ]
+    },
+    {
+      "service_uuid": "00001800-0000-1000-8000-00805f9b34fb",
+      "characteristics": [
+        {
+          "uuid": "00002a00-0000-1000-8000-00805f9b34fb",
+          "properties": [
+            "read"
+          ],
+          "handle": 2
+        }
+      ]
+    },
+    {
+      "service_uuid": "0000180f-0000-1000-8000-00805f9b34fb",
+      "characteristics": [
+        {
+          "uuid": "00002a19-0000-1000-8000-00805f9b34fb",
+          "properties": [
+            "read"
+          ],
+          "handle": 5
+        }
+      ]
+    },
+    {
+      "service_uuid": "0000ae00-0000-1000-8000-00805f9b34fb",
+      "characteristics": [
+        {
+          "uuid": "0000ae01-0000-1000-8000-00805f9b34fb",
+          "properties": [
+            "write-without-response"
+          ],
+          "handle": 129
+        },
+        {
+          "uuid": "0000ae02-0000-1000-8000-00805f9b34fb",
+          "properties": [
+            "notify"
+          ],
+          "handle": 131
+        }
+      ]
+    }
+  ],
+  "notifications_enabled": [
+    "0000fff1-0000-1000-8000-00805f9b34fb"
+  ],
+  "handshake": [
+    {
+      "step": 1,
+      "description": "FFF1 notify: 0x12 scale info; protocol_type byte 2 is 0x20.",
+      "event_ids": [
+        "e013"
+      ]
+    },
+    {
+      "step": 2,
+      "description": "FFF2 write: unit_config_0x13, lb unit byte 0x02.",
+      "event_ids": [
+        "e015"
+      ]
+    },
+    {
+      "step": 3,
+      "description": "FFF2 write: time_push.",
+      "event_ids": [
+        "e016"
+      ]
+    },
+    {
+      "step": 4,
+      "description": "FFF1 notify: 0x14 response.",
+      "event_ids": [
+        "e017"
+      ]
+    },
+    {
+      "step": 5,
+      "description": "FFF2 write: time_sync_0x20.",
+      "event_ids": [
+        "e018"
+      ]
+    },
+    {
+      "step": 6,
+      "description": "FFF1 notify: 0x21 response.",
+      "event_ids": [
+        "e019"
+      ]
+    },
+    {
+      "step": 7,
+      "description": "FFF2 writes: two 0xA0 responses.",
+      "event_ids": [
+        "e020",
+        "e021"
+      ]
+    },
+    {
+      "step": 8,
+      "description": "FFF1 notify: repeated 0x10 live frames, weight-only then word-block frames.",
+      "event_ids": [
+        "e022",
+        "e023",
+        "e024",
+        "e025",
+        "e026",
+        "e027",
+        "e028",
+        "e029",
+        "e030",
+        "e031",
+        "e032",
+        "e033",
+        "e034",
+        "e035",
+        "e036",
+        "e037",
+        "e038",
+        "e039",
+        "e040",
+        "e041",
+        "e042",
+        "e043",
+        "e044",
+        "e045",
+        "e046",
+        "e047",
+        "e048",
+        "e049",
+        "e050",
+        "e051",
+        "e052",
+        "e053",
+        "e054",
+        "e055",
+        "e056",
+        "e057",
+        "e058",
+        "e059",
+        "e060",
+        "e061",
+        "e062",
+        "e063",
+        "e064",
+        "e065",
+        "e066",
+        "e067",
+        "e068",
+        "e069",
+        "e070",
+        "e071",
+        "e072",
+        "e073",
+        "e074",
+        "e075",
+        "e076",
+        "e077",
+        "e078",
+        "e079",
+        "e080",
+        "e081",
+        "e082",
+        "e083",
+        "e084",
+        "e085",
+        "e086",
+        "e087",
+        "e088",
+        "e089",
+        "e090",
+        "e091",
+        "e092",
+        "e093",
+        "e094",
+        "e095",
+        "e096",
+        "e097",
+        "e098",
+        "e099",
+        "e100",
+        "e101",
+        "e102",
+        "e103",
+        "e104",
+        "e105",
+        "e106",
+        "e107",
+        "e108",
+        "e109",
+        "e110",
+        "e111",
+        "e112",
+        "e113",
+        "e114",
+        "e115",
+        "e116",
+        "e117",
+        "e118",
+        "e119",
+        "e120",
+        "e121",
+        "e122",
+        "e123",
+        "e124",
+        "e125",
+        "e126",
+        "e127",
+        "e128",
+        "e129",
+        "e130",
+        "e131",
+        "e132",
+        "e133",
+        "e134",
+        "e135",
+        "e136",
+        "e137",
+        "e138",
+        "e139",
+        "e140",
+        "e141",
+        "e142",
+        "e143",
+        "e144",
+        "e145",
+        "e146",
+        "e147",
+        "e148",
+        "e149",
+        "e150",
+        "e151",
+        "e152",
+        "e153",
+        "e154",
+        "e155",
+        "e156",
+        "e157",
+        "e158",
+        "e159",
+        "e160"
+      ],
+      "event_count": 139
+    }
+  ],
+  "decode_hypotheses": {
+    "weight_only_0x10": {
+      "opcode": "0x10",
+      "frame_hex": "1012201ee600110000000000000000000057",
+      "event_id": "e023",
+      "weight_raw_u16_be": 7910,
+      "weight_formula_candidate": "int.from_bytes(frame[3:5], \"big\") / 100",
+      "weight_kg_candidate": 79.1,
+      "weight_confidence": "high",
+      "weight_provenance": "Repeated capture decode; matches Feelfit 174.4 lb (=79.11 kg) within 0.01 kg.",
+      "b5": 0,
+      "b6": 17,
+      "checksum": {
+        "byte_index": 17,
+        "observed": 87,
+        "formula_candidate": "sum(frame[:-1]) & 0xff",
+        "matches": true
+      },
+      "opaque_words": []
+    },
+    "opaque_word_block_0x10_examples": [
+      {
+        "opcode": "0x10",
+        "frame_hex": "1012201ee601210d2c0b790d810bbe0d3cc5",
+        "event_id": "e028",
+        "weight_raw_u16_be": 7910,
+        "weight_formula_candidate": "int.from_bytes(frame[3:5], \"big\") / 100",
+        "weight_kg_candidate": 79.1,
+        "weight_confidence": "high",
+        "weight_provenance": "Repeated capture decode; matches Feelfit 174.4 lb (=79.11 kg) within 0.01 kg.",
+        "b5": 1,
+        "b6": 33,
+        "checksum": {
+          "byte_index": 17,
+          "observed": 197,
+          "formula_candidate": "sum(frame[:-1]) & 0xff",
+          "matches": true
+        },
+        "opaque_words": [
+          3372,
+          2937,
+          3457,
+          3006,
+          3388
+        ],
+        "word_layout_candidate": "five consecutive big-endian u16 values at bytes 7..16",
+        "word_unit": null,
+        "word_confidence": "low: field boundary and repetition are clear; units/frequency/ordering meaning is unproven"
+      },
+      {
+        "opcode": "0x10",
+        "frame_hex": "1012201ee601210d430b7d0dd40bf90d3d6f",
+        "event_id": "e069",
+        "weight_raw_u16_be": 7910,
+        "weight_formula_candidate": "int.from_bytes(frame[3:5], \"big\") / 100",
+        "weight_kg_candidate": 79.1,
+        "weight_confidence": "high",
+        "weight_provenance": "Repeated capture decode; matches Feelfit 174.4 lb (=79.11 kg) within 0.01 kg.",
+        "b5": 1,
+        "b6": 33,
+        "checksum": {
+          "byte_index": 17,
+          "observed": 111,
+          "formula_candidate": "sum(frame[:-1]) & 0xff",
+          "matches": true
+        },
+        "opaque_words": [
+          3395,
+          2941,
+          3540,
+          3065,
+          3389
+        ],
+        "word_layout_candidate": "five consecutive big-endian u16 values at bytes 7..16",
+        "word_unit": null,
+        "word_confidence": "low: field boundary and repetition are clear; units/frequency/ordering meaning is unproven"
+      },
+      {
+        "opcode": "0x10",
+        "frame_hex": "1012201ee601210d3a0b860dbc0bea0d404b",
+        "event_id": "e130",
+        "weight_raw_u16_be": 7910,
+        "weight_formula_candidate": "int.from_bytes(frame[3:5], \"big\") / 100",
+        "weight_kg_candidate": 79.1,
+        "weight_confidence": "high",
+        "weight_provenance": "Repeated capture decode; matches Feelfit 174.4 lb (=79.11 kg) within 0.01 kg.",
+        "b5": 1,
+        "b6": 33,
+        "checksum": {
+          "byte_index": 17,
+          "observed": 75,
+          "formula_candidate": "sum(frame[:-1]) & 0xff",
+          "matches": true
+        },
+        "opaque_words": [
+          3386,
+          2950,
+          3516,
+          3050,
+          3392
+        ],
+        "word_layout_candidate": "five consecutive big-endian u16 values at bytes 7..16",
+        "word_unit": null,
+        "word_confidence": "low: field boundary and repetition are clear; units/frequency/ordering meaning is unproven"
+      }
+    ]
+  },
+  "checksum_verification": {
+    "formula_tested": "sum(frame[:-1]) & 0xff == frame[-1]",
+    "all_packet_records": {
+      "matching": 146,
+      "total": 147
+    },
+    "opcode_0x10_records": {
+      "matching": 139,
+      "total": 139
+    },
+    "exception": {
+      "event_id": "e016",
+      "name": "time_push",
+      "hex": "02e4820b32",
+      "note": "Does not match the checksum formula; interpreted as a five-byte time message rather than a checksum-bearing frame."
+    }
+  },
+  "events": [
+    {
+      "event_id": "e001",
+      "source_line": 1,
+      "timestamp": "2026-08-09T18:26:43.681+00:00",
+      "kind": "connected",
+      "device_address_hash": "000000000000"
+    },
+    {
+      "event_id": "e002",
+      "source_line": 2,
+      "timestamp": "2026-08-09T18:26:43.682+00:00",
+      "kind": "gatt_char",
+      "service_uuid": "0000180a-0000-1000-8000-00805f9b34fb",
+      "characteristic_uuid": "00002a23-0000-1000-8000-00805f9b34fb",
+      "properties": [
+        "read"
+      ],
+      "handle": 12
+    },
+    {
+      "event_id": "e003",
+      "source_line": 3,
+      "timestamp": "2026-08-09T18:26:43.682+00:00",
+      "kind": "gatt_char",
+      "service_uuid": "0000180a-0000-1000-8000-00805f9b34fb",
+      "characteristic_uuid": "00002a26-0000-1000-8000-00805f9b34fb",
+      "properties": [
+        "read"
+      ],
+      "handle": 10
+    },
+    {
+      "event_id": "e004",
+      "source_line": 4,
+      "timestamp": "2026-08-09T18:26:43.682+00:00",
+      "kind": "gatt_char",
+      "service_uuid": "0000180a-0000-1000-8000-00805f9b34fb",
+      "characteristic_uuid": "00002a29-0000-1000-8000-00805f9b34fb",
+      "properties": [
+        "read"
+      ],
+      "handle": 8
+    },
+    {
+      "event_id": "e005",
+      "source_line": 5,
+      "timestamp": "2026-08-09T18:26:43.682+00:00",
+      "kind": "gatt_char",
+      "service_uuid": "0000180a-0000-1000-8000-00805f9b34fb",
+      "characteristic_uuid": "00002a25-0000-1000-8000-00805f9b34fb",
+      "properties": [
+        "read"
+      ],
+      "handle": 14
+    },
+    {
+      "event_id": "e006",
+      "source_line": 6,
+      "timestamp": "2026-08-09T18:26:43.682+00:00",
+      "kind": "gatt_char",
+      "service_uuid": "0000fff0-0000-1000-8000-00805f9b34fb",
+      "characteristic_uuid": "0000fff2-0000-1000-8000-00805f9b34fb",
+      "properties": [
+        "write-without-response",
+        "write"
+      ],
+      "handle": 20
+    },
+    {
+      "event_id": "e007",
+      "source_line": 7,
+      "timestamp": "2026-08-09T18:26:43.682+00:00",
+      "kind": "gatt_char",
+      "service_uuid": "0000fff0-0000-1000-8000-00805f9b34fb",
+      "characteristic_uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "properties": [
+        "notify"
+      ],
+      "handle": 17
+    },
+    {
+      "event_id": "e008",
+      "source_line": 8,
+      "timestamp": "2026-08-09T18:26:43.682+00:00",
+      "kind": "gatt_char",
+      "service_uuid": "00001800-0000-1000-8000-00805f9b34fb",
+      "characteristic_uuid": "00002a00-0000-1000-8000-00805f9b34fb",
+      "properties": [
+        "read"
+      ],
+      "handle": 2
+    },
+    {
+      "event_id": "e009",
+      "source_line": 9,
+      "timestamp": "2026-08-09T18:26:43.682+00:00",
+      "kind": "gatt_char",
+      "service_uuid": "0000180f-0000-1000-8000-00805f9b34fb",
+      "characteristic_uuid": "00002a19-0000-1000-8000-00805f9b34fb",
+      "properties": [
+        "read"
+      ],
+      "handle": 5
+    },
+    {
+      "event_id": "e010",
+      "source_line": 10,
+      "timestamp": "2026-08-09T18:26:43.682+00:00",
+      "kind": "gatt_char",
+      "service_uuid": "0000ae00-0000-1000-8000-00805f9b34fb",
+      "characteristic_uuid": "0000ae01-0000-1000-8000-00805f9b34fb",
+      "properties": [
+        "write-without-response"
+      ],
+      "handle": 129
+    },
+    {
+      "event_id": "e011",
+      "source_line": 11,
+      "timestamp": "2026-08-09T18:26:43.682+00:00",
+      "kind": "gatt_char",
+      "service_uuid": "0000ae00-0000-1000-8000-00805f9b34fb",
+      "characteristic_uuid": "0000ae02-0000-1000-8000-00805f9b34fb",
+      "properties": [
+        "notify"
+      ],
+      "handle": 131
+    },
+    {
+      "event_id": "e012",
+      "source_line": 12,
+      "timestamp": "2026-08-09T18:26:43.988+00:00",
+      "kind": "notify_on",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb"
+    },
+    {
+      "event_id": "e013",
+      "source_line": 13,
+      "timestamp": "2026-08-09T18:26:44.188+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "121220d1e0460003ff079308400005030027",
+      "opcode": 18
+    },
+    {
+      "event_id": "e014",
+      "source_line": 14,
+      "timestamp": "2026-08-09T18:26:44.188+00:00",
+      "kind": "protocol_type",
+      "value": 32
+    },
+    {
+      "event_id": "e015",
+      "source_line": 15,
+      "timestamp": "2026-08-09T18:26:44.190+00:00",
+      "kind": "write",
+      "direction": "host->device",
+      "uuid": "0000fff2-0000-1000-8000-00805f9b34fb",
+      "handle": 20,
+      "hex": "13092002100000004e",
+      "opcode": 19,
+      "name": "unit_config_0x13"
+    },
+    {
+      "event_id": "e016",
+      "source_line": 16,
+      "timestamp": "2026-08-09T18:26:44.191+00:00",
+      "kind": "write",
+      "direction": "host->device",
+      "uuid": "0000fff2-0000-1000-8000-00805f9b34fb",
+      "handle": 20,
+      "hex": "02e4820b32",
+      "opcode": 2,
+      "name": "time_push"
+    },
+    {
+      "event_id": "e017",
+      "source_line": 17,
+      "timestamp": "2026-08-09T18:26:44.413+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "140b200000010000000040",
+      "opcode": 20
+    },
+    {
+      "event_id": "e018",
+      "source_line": 18,
+      "timestamp": "2026-08-09T18:26:44.415+00:00",
+      "kind": "write",
+      "direction": "host->device",
+      "uuid": "0000fff2-0000-1000-8000-00805f9b34fb",
+      "handle": 20,
+      "hex": "200820e4820b32eb",
+      "opcode": 32,
+      "name": "time_sync_0x20"
+    },
+    {
+      "event_id": "e019",
+      "source_line": 19,
+      "timestamp": "2026-08-09T18:26:44.591+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "2105200147",
+      "opcode": 33
+    },
+    {
+      "event_id": "e020",
+      "source_line": 20,
+      "timestamp": "2026-08-09T18:26:44.593+00:00",
+      "kind": "write",
+      "direction": "host->device",
+      "uuid": "0000fff2-0000-1000-8000-00805f9b34fb",
+      "handle": 20,
+      "hex": "a00d04fe0000000000000000af",
+      "opcode": 160,
+      "name": "a0_1"
+    },
+    {
+      "event_id": "e021",
+      "source_line": 21,
+      "timestamp": "2026-08-09T18:26:44.593+00:00",
+      "kind": "write",
+      "direction": "host->device",
+      "uuid": "0000fff2-0000-1000-8000-00805f9b34fb",
+      "handle": 20,
+      "hex": "a00d02010008002106b804029d",
+      "opcode": 160,
+      "name": "a0_2"
+    },
+    {
+      "event_id": "e022",
+      "source_line": 22,
+      "timestamp": "2026-08-09T18:26:44.685+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201f1300110000000000000000000085",
+      "opcode": 16
+    },
+    {
+      "event_id": "e023",
+      "source_line": 24,
+      "timestamp": "2026-08-09T18:26:44.952+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee600110000000000000000000057",
+      "opcode": 16
+    },
+    {
+      "event_id": "e024",
+      "source_line": 26,
+      "timestamp": "2026-08-09T18:26:45.180+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee600110000000000000000000057",
+      "opcode": 16
+    },
+    {
+      "event_id": "e025",
+      "source_line": 28,
+      "timestamp": "2026-08-09T18:26:45.447+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee600110000000000000000000057",
+      "opcode": 16
+    },
+    {
+      "event_id": "e026",
+      "source_line": 30,
+      "timestamp": "2026-08-09T18:26:45.672+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee600110000000000000000000057",
+      "opcode": 16
+    },
+    {
+      "event_id": "e027",
+      "source_line": 32,
+      "timestamp": "2026-08-09T18:26:45.945+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee600110000000000000000000057",
+      "opcode": 16
+    },
+    {
+      "event_id": "e028",
+      "source_line": 34,
+      "timestamp": "2026-08-09T18:26:56.252+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d2c0b790d810bbe0d3cc5",
+      "opcode": 16
+    },
+    {
+      "event_id": "e029",
+      "source_line": 36,
+      "timestamp": "2026-08-09T18:26:56.701+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d2c0b790d810bbe0d3cc5",
+      "opcode": 16
+    },
+    {
+      "event_id": "e030",
+      "source_line": 38,
+      "timestamp": "2026-08-09T18:26:57.153+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d2c0b790d810bbe0d3cc5",
+      "opcode": 16
+    },
+    {
+      "event_id": "e031",
+      "source_line": 40,
+      "timestamp": "2026-08-09T18:26:57.644+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d2c0b790d810bbe0d3cc5",
+      "opcode": 16
+    },
+    {
+      "event_id": "e032",
+      "source_line": 42,
+      "timestamp": "2026-08-09T18:26:58.140+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d2c0b790d810bbe0d3cc5",
+      "opcode": 16
+    },
+    {
+      "event_id": "e033",
+      "source_line": 44,
+      "timestamp": "2026-08-09T18:26:58.632+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d2c0b790d810bbe0d3cc5",
+      "opcode": 16
+    },
+    {
+      "event_id": "e034",
+      "source_line": 46,
+      "timestamp": "2026-08-09T18:26:59.129+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d2c0b790d810bbe0d3cc5",
+      "opcode": 16
+    },
+    {
+      "event_id": "e035",
+      "source_line": 48,
+      "timestamp": "2026-08-09T18:26:59.576+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d2c0b790d810bbe0d3cc5",
+      "opcode": 16
+    },
+    {
+      "event_id": "e036",
+      "source_line": 50,
+      "timestamp": "2026-08-09T18:27:00.072+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d2c0b790d810bbe0d3cc5",
+      "opcode": 16
+    },
+    {
+      "event_id": "e037",
+      "source_line": 52,
+      "timestamp": "2026-08-09T18:27:00.567+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d2c0b790d810bbe0d3cc5",
+      "opcode": 16
+    },
+    {
+      "event_id": "e038",
+      "source_line": 54,
+      "timestamp": "2026-08-09T18:27:01.065+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d2c0b790d810bbe0d3cc5",
+      "opcode": 16
+    },
+    {
+      "event_id": "e039",
+      "source_line": 56,
+      "timestamp": "2026-08-09T18:27:01.512+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d2c0b790d810bbe0d3cc5",
+      "opcode": 16
+    },
+    {
+      "event_id": "e040",
+      "source_line": 58,
+      "timestamp": "2026-08-09T18:27:02.100+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012200bf900110000000000000000000057",
+      "opcode": 16
+    },
+    {
+      "event_id": "e041",
+      "source_line": 60,
+      "timestamp": "2026-08-09T18:27:02.324+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "10122013a60011000000000000000000000c",
+      "opcode": 16
+    },
+    {
+      "event_id": "e042",
+      "source_line": 62,
+      "timestamp": "2026-08-09T18:27:02.592+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "10122004e200110000000000000000000039",
+      "opcode": 16
+    },
+    {
+      "event_id": "e043",
+      "source_line": 64,
+      "timestamp": "2026-08-09T18:27:02.821+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "101220000000110000000000000000000053",
+      "opcode": 16
+    },
+    {
+      "event_id": "e044",
+      "source_line": 66,
+      "timestamp": "2026-08-09T18:27:03.044+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "101220000000110000000000000000000053",
+      "opcode": 16
+    },
+    {
+      "event_id": "e045",
+      "source_line": 68,
+      "timestamp": "2026-08-09T18:27:03.313+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "101220000000110000000000000000000053",
+      "opcode": 16
+    },
+    {
+      "event_id": "e046",
+      "source_line": 70,
+      "timestamp": "2026-08-09T18:27:03.535+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "101220000000110000000000000000000053",
+      "opcode": 16
+    },
+    {
+      "event_id": "e047",
+      "source_line": 72,
+      "timestamp": "2026-08-09T18:27:03.809+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "101220000000110000000000000000000053",
+      "opcode": 16
+    },
+    {
+      "event_id": "e048",
+      "source_line": 74,
+      "timestamp": "2026-08-09T18:27:04.032+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "10122001f90011000000000000000000004d",
+      "opcode": 16
+    },
+    {
+      "event_id": "e049",
+      "source_line": 76,
+      "timestamp": "2026-08-09T18:27:04.304+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012200fdc0011000000000000000000003e",
+      "opcode": 16
+    },
+    {
+      "event_id": "e050",
+      "source_line": 78,
+      "timestamp": "2026-08-09T18:27:04.528+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201d74001100000000000000000000e4",
+      "opcode": 16
+    },
+    {
+      "event_id": "e051",
+      "source_line": 80,
+      "timestamp": "2026-08-09T18:27:04.801+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ec800110000000000000000000039",
+      "opcode": 16
+    },
+    {
+      "event_id": "e052",
+      "source_line": 82,
+      "timestamp": "2026-08-09T18:27:05.025+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee600110000000000000000000057",
+      "opcode": 16
+    },
+    {
+      "event_id": "e053",
+      "source_line": 84,
+      "timestamp": "2026-08-09T18:27:05.293+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201f0e00110000000000000000000080",
+      "opcode": 16
+    },
+    {
+      "event_id": "e054",
+      "source_line": 86,
+      "timestamp": "2026-08-09T18:27:05.521+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201e9100110000000000000000000002",
+      "opcode": 16
+    },
+    {
+      "event_id": "e055",
+      "source_line": 88,
+      "timestamp": "2026-08-09T18:27:05.788+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee600110000000000000000000057",
+      "opcode": 16
+    },
+    {
+      "event_id": "e056",
+      "source_line": 90,
+      "timestamp": "2026-08-09T18:27:06.013+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee600110000000000000000000057",
+      "opcode": 16
+    },
+    {
+      "event_id": "e057",
+      "source_line": 92,
+      "timestamp": "2026-08-09T18:27:06.285+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201e9100110000000000000000000002",
+      "opcode": 16
+    },
+    {
+      "event_id": "e058",
+      "source_line": 94,
+      "timestamp": "2026-08-09T18:27:06.556+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201f0400110000000000000000000076",
+      "opcode": 16
+    },
+    {
+      "event_id": "e059",
+      "source_line": 96,
+      "timestamp": "2026-08-09T18:27:06.733+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201f0400110000000000000000000076",
+      "opcode": 16
+    },
+    {
+      "event_id": "e060",
+      "source_line": 98,
+      "timestamp": "2026-08-09T18:27:07.003+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee600110000000000000000000057",
+      "opcode": 16
+    },
+    {
+      "event_id": "e061",
+      "source_line": 100,
+      "timestamp": "2026-08-09T18:27:07.229+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee600110000000000000000000057",
+      "opcode": 16
+    },
+    {
+      "event_id": "e062",
+      "source_line": 102,
+      "timestamp": "2026-08-09T18:27:07.500+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201eb90011000000000000000000002a",
+      "opcode": 16
+    },
+    {
+      "event_id": "e063",
+      "source_line": 104,
+      "timestamp": "2026-08-09T18:27:07.724+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee600110000000000000000000057",
+      "opcode": 16
+    },
+    {
+      "event_id": "e064",
+      "source_line": 106,
+      "timestamp": "2026-08-09T18:27:07.992+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee600110000000000000000000057",
+      "opcode": 16
+    },
+    {
+      "event_id": "e065",
+      "source_line": 108,
+      "timestamp": "2026-08-09T18:27:08.216+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee600110000000000000000000057",
+      "opcode": 16
+    },
+    {
+      "event_id": "e066",
+      "source_line": 110,
+      "timestamp": "2026-08-09T18:27:08.489+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee600110000000000000000000057",
+      "opcode": 16
+    },
+    {
+      "event_id": "e067",
+      "source_line": 112,
+      "timestamp": "2026-08-09T18:27:08.713+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee600110000000000000000000057",
+      "opcode": 16
+    },
+    {
+      "event_id": "e068",
+      "source_line": 114,
+      "timestamp": "2026-08-09T18:27:08.985+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee600110000000000000000000057",
+      "opcode": 16
+    },
+    {
+      "event_id": "e069",
+      "source_line": 116,
+      "timestamp": "2026-08-09T18:27:19.469+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f",
+      "opcode": 16
+    },
+    {
+      "event_id": "e070",
+      "source_line": 118,
+      "timestamp": "2026-08-09T18:27:19.968+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f",
+      "opcode": 16
+    },
+    {
+      "event_id": "e071",
+      "source_line": 120,
+      "timestamp": "2026-08-09T18:27:20.413+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f",
+      "opcode": 16
+    },
+    {
+      "event_id": "e072",
+      "source_line": 122,
+      "timestamp": "2026-08-09T18:27:20.909+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f",
+      "opcode": 16
+    },
+    {
+      "event_id": "e073",
+      "source_line": 124,
+      "timestamp": "2026-08-09T18:27:21.448+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f",
+      "opcode": 16
+    },
+    {
+      "event_id": "e074",
+      "source_line": 126,
+      "timestamp": "2026-08-09T18:27:21.900+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f",
+      "opcode": 16
+    },
+    {
+      "event_id": "e075",
+      "source_line": 128,
+      "timestamp": "2026-08-09T18:27:22.349+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f",
+      "opcode": 16
+    },
+    {
+      "event_id": "e076",
+      "source_line": 130,
+      "timestamp": "2026-08-09T18:27:22.844+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f",
+      "opcode": 16
+    },
+    {
+      "event_id": "e077",
+      "source_line": 132,
+      "timestamp": "2026-08-09T18:27:23.345+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f",
+      "opcode": 16
+    },
+    {
+      "event_id": "e078",
+      "source_line": 134,
+      "timestamp": "2026-08-09T18:27:23.833+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f",
+      "opcode": 16
+    },
+    {
+      "event_id": "e079",
+      "source_line": 136,
+      "timestamp": "2026-08-09T18:27:24.285+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f",
+      "opcode": 16
+    },
+    {
+      "event_id": "e080",
+      "source_line": 138,
+      "timestamp": "2026-08-09T18:27:24.781+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f",
+      "opcode": 16
+    },
+    {
+      "event_id": "e081",
+      "source_line": 140,
+      "timestamp": "2026-08-09T18:27:25.272+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f",
+      "opcode": 16
+    },
+    {
+      "event_id": "e082",
+      "source_line": 142,
+      "timestamp": "2026-08-09T18:27:25.769+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f",
+      "opcode": 16
+    },
+    {
+      "event_id": "e083",
+      "source_line": 144,
+      "timestamp": "2026-08-09T18:27:26.221+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f",
+      "opcode": 16
+    },
+    {
+      "event_id": "e084",
+      "source_line": 146,
+      "timestamp": "2026-08-09T18:27:26.713+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f",
+      "opcode": 16
+    },
+    {
+      "event_id": "e085",
+      "source_line": 148,
+      "timestamp": "2026-08-09T18:27:27.209+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f",
+      "opcode": 16
+    },
+    {
+      "event_id": "e086",
+      "source_line": 150,
+      "timestamp": "2026-08-09T18:27:27.703+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f",
+      "opcode": 16
+    },
+    {
+      "event_id": "e087",
+      "source_line": 152,
+      "timestamp": "2026-08-09T18:27:28.196+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f",
+      "opcode": 16
+    },
+    {
+      "event_id": "e088",
+      "source_line": 154,
+      "timestamp": "2026-08-09T18:27:28.650+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f",
+      "opcode": 16
+    },
+    {
+      "event_id": "e089",
+      "source_line": 156,
+      "timestamp": "2026-08-09T18:27:29.145+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f",
+      "opcode": 16
+    },
+    {
+      "event_id": "e090",
+      "source_line": 158,
+      "timestamp": "2026-08-09T18:27:29.641+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f",
+      "opcode": 16
+    },
+    {
+      "event_id": "e091",
+      "source_line": 160,
+      "timestamp": "2026-08-09T18:27:30.133+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f",
+      "opcode": 16
+    },
+    {
+      "event_id": "e092",
+      "source_line": 162,
+      "timestamp": "2026-08-09T18:27:30.585+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f",
+      "opcode": 16
+    },
+    {
+      "event_id": "e093",
+      "source_line": 164,
+      "timestamp": "2026-08-09T18:27:31.081+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f",
+      "opcode": 16
+    },
+    {
+      "event_id": "e094",
+      "source_line": 166,
+      "timestamp": "2026-08-09T18:27:31.573+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f",
+      "opcode": 16
+    },
+    {
+      "event_id": "e095",
+      "source_line": 168,
+      "timestamp": "2026-08-09T18:27:32.069+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f",
+      "opcode": 16
+    },
+    {
+      "event_id": "e096",
+      "source_line": 170,
+      "timestamp": "2026-08-09T18:27:32.520+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f",
+      "opcode": 16
+    },
+    {
+      "event_id": "e097",
+      "source_line": 172,
+      "timestamp": "2026-08-09T18:27:33.012+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f",
+      "opcode": 16
+    },
+    {
+      "event_id": "e098",
+      "source_line": 174,
+      "timestamp": "2026-08-09T18:27:33.509+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f",
+      "opcode": 16
+    },
+    {
+      "event_id": "e099",
+      "source_line": 176,
+      "timestamp": "2026-08-09T18:27:34.005+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f",
+      "opcode": 16
+    },
+    {
+      "event_id": "e100",
+      "source_line": 178,
+      "timestamp": "2026-08-09T18:27:34.505+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f",
+      "opcode": 16
+    },
+    {
+      "event_id": "e101",
+      "source_line": 180,
+      "timestamp": "2026-08-09T18:27:34.949+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f",
+      "opcode": 16
+    },
+    {
+      "event_id": "e102",
+      "source_line": 182,
+      "timestamp": "2026-08-09T18:27:35.445+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f",
+      "opcode": 16
+    },
+    {
+      "event_id": "e103",
+      "source_line": 184,
+      "timestamp": "2026-08-09T18:27:35.940+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f",
+      "opcode": 16
+    },
+    {
+      "event_id": "e104",
+      "source_line": 186,
+      "timestamp": "2026-08-09T18:27:39.807+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "10122005230011000000000000000000007b",
+      "opcode": 16
+    },
+    {
+      "event_id": "e105",
+      "source_line": 188,
+      "timestamp": "2026-08-09T18:27:40.033+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012200785001100000000000000000000df",
+      "opcode": 16
+    },
+    {
+      "event_id": "e106",
+      "source_line": 190,
+      "timestamp": "2026-08-09T18:27:40.305+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012200267001100000000000000000000bc",
+      "opcode": 16
+    },
+    {
+      "event_id": "e107",
+      "source_line": 192,
+      "timestamp": "2026-08-09T18:27:40.528+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "10122001b80011000000000000000000000c",
+      "opcode": 16
+    },
+    {
+      "event_id": "e108",
+      "source_line": 194,
+      "timestamp": "2026-08-09T18:27:40.801+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012200cad0011000000000000000000000c",
+      "opcode": 16
+    },
+    {
+      "event_id": "e109",
+      "source_line": 196,
+      "timestamp": "2026-08-09T18:27:41.024+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201c61001100000000000000000000d0",
+      "opcode": 16
+    },
+    {
+      "event_id": "e110",
+      "source_line": 198,
+      "timestamp": "2026-08-09T18:27:41.293+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201e37001100000000000000000000a8",
+      "opcode": 16
+    },
+    {
+      "event_id": "e111",
+      "source_line": 200,
+      "timestamp": "2026-08-09T18:27:41.564+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee600110000000000000000000057",
+      "opcode": 16
+    },
+    {
+      "event_id": "e112",
+      "source_line": 202,
+      "timestamp": "2026-08-09T18:27:41.789+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201f2700110000000000000000000099",
+      "opcode": 16
+    },
+    {
+      "event_id": "e113",
+      "source_line": 204,
+      "timestamp": "2026-08-09T18:27:42.013+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201e73001100000000000000000000e4",
+      "opcode": 16
+    },
+    {
+      "event_id": "e114",
+      "source_line": 206,
+      "timestamp": "2026-08-09T18:27:42.329+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee600110000000000000000000057",
+      "opcode": 16
+    },
+    {
+      "event_id": "e115",
+      "source_line": 208,
+      "timestamp": "2026-08-09T18:27:42.509+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ea500110000000000000000000016",
+      "opcode": 16
+    },
+    {
+      "event_id": "e116",
+      "source_line": 210,
+      "timestamp": "2026-08-09T18:27:42.733+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201eff00110000000000000000000070",
+      "opcode": 16
+    },
+    {
+      "event_id": "e117",
+      "source_line": 212,
+      "timestamp": "2026-08-09T18:27:43.008+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee600110000000000000000000057",
+      "opcode": 16
+    },
+    {
+      "event_id": "e118",
+      "source_line": 214,
+      "timestamp": "2026-08-09T18:27:43.229+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201e8c001100000000000000000000fd",
+      "opcode": 16
+    },
+    {
+      "event_id": "e119",
+      "source_line": 216,
+      "timestamp": "2026-08-09T18:27:43.501+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201eff00110000000000000000000070",
+      "opcode": 16
+    },
+    {
+      "event_id": "e120",
+      "source_line": 218,
+      "timestamp": "2026-08-09T18:27:43.724+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee600110000000000000000000057",
+      "opcode": 16
+    },
+    {
+      "event_id": "e121",
+      "source_line": 220,
+      "timestamp": "2026-08-09T18:27:43.992+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee600110000000000000000000057",
+      "opcode": 16
+    },
+    {
+      "event_id": "e122",
+      "source_line": 222,
+      "timestamp": "2026-08-09T18:27:44.224+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee600110000000000000000000057",
+      "opcode": 16
+    },
+    {
+      "event_id": "e123",
+      "source_line": 224,
+      "timestamp": "2026-08-09T18:27:44.489+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee600110000000000000000000057",
+      "opcode": 16
+    },
+    {
+      "event_id": "e124",
+      "source_line": 226,
+      "timestamp": "2026-08-09T18:27:44.717+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee600110000000000000000000057",
+      "opcode": 16
+    },
+    {
+      "event_id": "e125",
+      "source_line": 228,
+      "timestamp": "2026-08-09T18:27:44.985+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee600110000000000000000000057",
+      "opcode": 16
+    },
+    {
+      "event_id": "e126",
+      "source_line": 230,
+      "timestamp": "2026-08-09T18:27:45.208+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee600110000000000000000000057",
+      "opcode": 16
+    },
+    {
+      "event_id": "e127",
+      "source_line": 232,
+      "timestamp": "2026-08-09T18:27:45.479+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee600110000000000000000000057",
+      "opcode": 16
+    },
+    {
+      "event_id": "e128",
+      "source_line": 234,
+      "timestamp": "2026-08-09T18:27:45.705+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee600110000000000000000000057",
+      "opcode": 16
+    },
+    {
+      "event_id": "e129",
+      "source_line": 236,
+      "timestamp": "2026-08-09T18:27:45.973+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee600110000000000000000000057",
+      "opcode": 16
+    },
+    {
+      "event_id": "e130",
+      "source_line": 238,
+      "timestamp": "2026-08-09T18:27:56.413+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b",
+      "opcode": 16
+    },
+    {
+      "event_id": "e131",
+      "source_line": 240,
+      "timestamp": "2026-08-09T18:27:56.907+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b",
+      "opcode": 16
+    },
+    {
+      "event_id": "e132",
+      "source_line": 242,
+      "timestamp": "2026-08-09T18:27:57.405+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b",
+      "opcode": 16
+    },
+    {
+      "event_id": "e133",
+      "source_line": 244,
+      "timestamp": "2026-08-09T18:27:57.852+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b",
+      "opcode": 16
+    },
+    {
+      "event_id": "e134",
+      "source_line": 246,
+      "timestamp": "2026-08-09T18:27:58.349+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b",
+      "opcode": 16
+    },
+    {
+      "event_id": "e135",
+      "source_line": 248,
+      "timestamp": "2026-08-09T18:27:58.845+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b",
+      "opcode": 16
+    },
+    {
+      "event_id": "e136",
+      "source_line": 250,
+      "timestamp": "2026-08-09T18:27:59.341+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b",
+      "opcode": 16
+    },
+    {
+      "event_id": "e137",
+      "source_line": 252,
+      "timestamp": "2026-08-09T18:27:59.788+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b",
+      "opcode": 16
+    },
+    {
+      "event_id": "e138",
+      "source_line": 254,
+      "timestamp": "2026-08-09T18:28:00.284+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b",
+      "opcode": 16
+    },
+    {
+      "event_id": "e139",
+      "source_line": 256,
+      "timestamp": "2026-08-09T18:28:00.779+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b",
+      "opcode": 16
+    },
+    {
+      "event_id": "e140",
+      "source_line": 258,
+      "timestamp": "2026-08-09T18:28:01.272+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b",
+      "opcode": 16
+    },
+    {
+      "event_id": "e141",
+      "source_line": 260,
+      "timestamp": "2026-08-09T18:28:01.724+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b",
+      "opcode": 16
+    },
+    {
+      "event_id": "e142",
+      "source_line": 262,
+      "timestamp": "2026-08-09T18:28:02.219+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b",
+      "opcode": 16
+    },
+    {
+      "event_id": "e143",
+      "source_line": 264,
+      "timestamp": "2026-08-09T18:28:02.716+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b",
+      "opcode": 16
+    },
+    {
+      "event_id": "e144",
+      "source_line": 266,
+      "timestamp": "2026-08-09T18:28:03.208+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b",
+      "opcode": 16
+    },
+    {
+      "event_id": "e145",
+      "source_line": 268,
+      "timestamp": "2026-08-09T18:28:03.661+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b",
+      "opcode": 16
+    },
+    {
+      "event_id": "e146",
+      "source_line": 270,
+      "timestamp": "2026-08-09T18:28:04.201+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b",
+      "opcode": 16
+    },
+    {
+      "event_id": "e147",
+      "source_line": 272,
+      "timestamp": "2026-08-09T18:28:04.648+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b",
+      "opcode": 16
+    },
+    {
+      "event_id": "e148",
+      "source_line": 274,
+      "timestamp": "2026-08-09T18:28:05.145+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b",
+      "opcode": 16
+    },
+    {
+      "event_id": "e149",
+      "source_line": 276,
+      "timestamp": "2026-08-09T18:28:05.641+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b",
+      "opcode": 16
+    },
+    {
+      "event_id": "e150",
+      "source_line": 278,
+      "timestamp": "2026-08-09T18:28:06.088+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b",
+      "opcode": 16
+    },
+    {
+      "event_id": "e151",
+      "source_line": 280,
+      "timestamp": "2026-08-09T18:28:06.589+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b",
+      "opcode": 16
+    },
+    {
+      "event_id": "e152",
+      "source_line": 282,
+      "timestamp": "2026-08-09T18:28:07.080+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b",
+      "opcode": 16
+    },
+    {
+      "event_id": "e153",
+      "source_line": 284,
+      "timestamp": "2026-08-09T18:28:07.572+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b",
+      "opcode": 16
+    },
+    {
+      "event_id": "e154",
+      "source_line": 286,
+      "timestamp": "2026-08-09T18:28:08.029+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b",
+      "opcode": 16
+    },
+    {
+      "event_id": "e155",
+      "source_line": 288,
+      "timestamp": "2026-08-09T18:28:08.521+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b",
+      "opcode": 16
+    },
+    {
+      "event_id": "e156",
+      "source_line": 290,
+      "timestamp": "2026-08-09T18:28:09.013+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b",
+      "opcode": 16
+    },
+    {
+      "event_id": "e157",
+      "source_line": 292,
+      "timestamp": "2026-08-09T18:28:09.508+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b",
+      "opcode": 16
+    },
+    {
+      "event_id": "e158",
+      "source_line": 294,
+      "timestamp": "2026-08-09T18:28:09.961+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b",
+      "opcode": 16
+    },
+    {
+      "event_id": "e159",
+      "source_line": 296,
+      "timestamp": "2026-08-09T18:28:10.453+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b",
+      "opcode": 16
+    },
+    {
+      "event_id": "e160",
+      "source_line": 298,
+      "timestamp": "2026-08-09T18:28:10.948+00:00",
+      "kind": "notification",
+      "direction": "device->host",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "handle": 17,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b",
+      "opcode": 16
+    },
+    {
+      "event_id": "e161",
+      "source_line": 300,
+      "timestamp": "2026-08-09T18:28:24.003+00:00",
+      "kind": "done"
+    }
+  ],
+  "notifications": [
+    {
+      "event_id": "e013",
+      "source_line": 13,
+      "timestamp": "2026-08-09T18:26:44.188+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 18,
+      "hex": "121220d1e0460003ff079308400005030027"
+    },
+    {
+      "event_id": "e017",
+      "source_line": 17,
+      "timestamp": "2026-08-09T18:26:44.413+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 20,
+      "hex": "140b200000010000000040"
+    },
+    {
+      "event_id": "e019",
+      "source_line": 19,
+      "timestamp": "2026-08-09T18:26:44.591+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 33,
+      "hex": "2105200147"
+    },
+    {
+      "event_id": "e022",
+      "source_line": 22,
+      "timestamp": "2026-08-09T18:26:44.685+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201f1300110000000000000000000085"
+    },
+    {
+      "event_id": "e023",
+      "source_line": 24,
+      "timestamp": "2026-08-09T18:26:44.952+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee600110000000000000000000057"
+    },
+    {
+      "event_id": "e024",
+      "source_line": 26,
+      "timestamp": "2026-08-09T18:26:45.180+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee600110000000000000000000057"
+    },
+    {
+      "event_id": "e025",
+      "source_line": 28,
+      "timestamp": "2026-08-09T18:26:45.447+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee600110000000000000000000057"
+    },
+    {
+      "event_id": "e026",
+      "source_line": 30,
+      "timestamp": "2026-08-09T18:26:45.672+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee600110000000000000000000057"
+    },
+    {
+      "event_id": "e027",
+      "source_line": 32,
+      "timestamp": "2026-08-09T18:26:45.945+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee600110000000000000000000057"
+    },
+    {
+      "event_id": "e028",
+      "source_line": 34,
+      "timestamp": "2026-08-09T18:26:56.252+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d2c0b790d810bbe0d3cc5"
+    },
+    {
+      "event_id": "e029",
+      "source_line": 36,
+      "timestamp": "2026-08-09T18:26:56.701+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d2c0b790d810bbe0d3cc5"
+    },
+    {
+      "event_id": "e030",
+      "source_line": 38,
+      "timestamp": "2026-08-09T18:26:57.153+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d2c0b790d810bbe0d3cc5"
+    },
+    {
+      "event_id": "e031",
+      "source_line": 40,
+      "timestamp": "2026-08-09T18:26:57.644+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d2c0b790d810bbe0d3cc5"
+    },
+    {
+      "event_id": "e032",
+      "source_line": 42,
+      "timestamp": "2026-08-09T18:26:58.140+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d2c0b790d810bbe0d3cc5"
+    },
+    {
+      "event_id": "e033",
+      "source_line": 44,
+      "timestamp": "2026-08-09T18:26:58.632+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d2c0b790d810bbe0d3cc5"
+    },
+    {
+      "event_id": "e034",
+      "source_line": 46,
+      "timestamp": "2026-08-09T18:26:59.129+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d2c0b790d810bbe0d3cc5"
+    },
+    {
+      "event_id": "e035",
+      "source_line": 48,
+      "timestamp": "2026-08-09T18:26:59.576+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d2c0b790d810bbe0d3cc5"
+    },
+    {
+      "event_id": "e036",
+      "source_line": 50,
+      "timestamp": "2026-08-09T18:27:00.072+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d2c0b790d810bbe0d3cc5"
+    },
+    {
+      "event_id": "e037",
+      "source_line": 52,
+      "timestamp": "2026-08-09T18:27:00.567+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d2c0b790d810bbe0d3cc5"
+    },
+    {
+      "event_id": "e038",
+      "source_line": 54,
+      "timestamp": "2026-08-09T18:27:01.065+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d2c0b790d810bbe0d3cc5"
+    },
+    {
+      "event_id": "e039",
+      "source_line": 56,
+      "timestamp": "2026-08-09T18:27:01.512+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d2c0b790d810bbe0d3cc5"
+    },
+    {
+      "event_id": "e040",
+      "source_line": 58,
+      "timestamp": "2026-08-09T18:27:02.100+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012200bf900110000000000000000000057"
+    },
+    {
+      "event_id": "e041",
+      "source_line": 60,
+      "timestamp": "2026-08-09T18:27:02.324+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "10122013a60011000000000000000000000c"
+    },
+    {
+      "event_id": "e042",
+      "source_line": 62,
+      "timestamp": "2026-08-09T18:27:02.592+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "10122004e200110000000000000000000039"
+    },
+    {
+      "event_id": "e043",
+      "source_line": 64,
+      "timestamp": "2026-08-09T18:27:02.821+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "101220000000110000000000000000000053"
+    },
+    {
+      "event_id": "e044",
+      "source_line": 66,
+      "timestamp": "2026-08-09T18:27:03.044+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "101220000000110000000000000000000053"
+    },
+    {
+      "event_id": "e045",
+      "source_line": 68,
+      "timestamp": "2026-08-09T18:27:03.313+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "101220000000110000000000000000000053"
+    },
+    {
+      "event_id": "e046",
+      "source_line": 70,
+      "timestamp": "2026-08-09T18:27:03.535+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "101220000000110000000000000000000053"
+    },
+    {
+      "event_id": "e047",
+      "source_line": 72,
+      "timestamp": "2026-08-09T18:27:03.809+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "101220000000110000000000000000000053"
+    },
+    {
+      "event_id": "e048",
+      "source_line": 74,
+      "timestamp": "2026-08-09T18:27:04.032+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "10122001f90011000000000000000000004d"
+    },
+    {
+      "event_id": "e049",
+      "source_line": 76,
+      "timestamp": "2026-08-09T18:27:04.304+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012200fdc0011000000000000000000003e"
+    },
+    {
+      "event_id": "e050",
+      "source_line": 78,
+      "timestamp": "2026-08-09T18:27:04.528+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201d74001100000000000000000000e4"
+    },
+    {
+      "event_id": "e051",
+      "source_line": 80,
+      "timestamp": "2026-08-09T18:27:04.801+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ec800110000000000000000000039"
+    },
+    {
+      "event_id": "e052",
+      "source_line": 82,
+      "timestamp": "2026-08-09T18:27:05.025+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee600110000000000000000000057"
+    },
+    {
+      "event_id": "e053",
+      "source_line": 84,
+      "timestamp": "2026-08-09T18:27:05.293+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201f0e00110000000000000000000080"
+    },
+    {
+      "event_id": "e054",
+      "source_line": 86,
+      "timestamp": "2026-08-09T18:27:05.521+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201e9100110000000000000000000002"
+    },
+    {
+      "event_id": "e055",
+      "source_line": 88,
+      "timestamp": "2026-08-09T18:27:05.788+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee600110000000000000000000057"
+    },
+    {
+      "event_id": "e056",
+      "source_line": 90,
+      "timestamp": "2026-08-09T18:27:06.013+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee600110000000000000000000057"
+    },
+    {
+      "event_id": "e057",
+      "source_line": 92,
+      "timestamp": "2026-08-09T18:27:06.285+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201e9100110000000000000000000002"
+    },
+    {
+      "event_id": "e058",
+      "source_line": 94,
+      "timestamp": "2026-08-09T18:27:06.556+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201f0400110000000000000000000076"
+    },
+    {
+      "event_id": "e059",
+      "source_line": 96,
+      "timestamp": "2026-08-09T18:27:06.733+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201f0400110000000000000000000076"
+    },
+    {
+      "event_id": "e060",
+      "source_line": 98,
+      "timestamp": "2026-08-09T18:27:07.003+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee600110000000000000000000057"
+    },
+    {
+      "event_id": "e061",
+      "source_line": 100,
+      "timestamp": "2026-08-09T18:27:07.229+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee600110000000000000000000057"
+    },
+    {
+      "event_id": "e062",
+      "source_line": 102,
+      "timestamp": "2026-08-09T18:27:07.500+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201eb90011000000000000000000002a"
+    },
+    {
+      "event_id": "e063",
+      "source_line": 104,
+      "timestamp": "2026-08-09T18:27:07.724+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee600110000000000000000000057"
+    },
+    {
+      "event_id": "e064",
+      "source_line": 106,
+      "timestamp": "2026-08-09T18:27:07.992+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee600110000000000000000000057"
+    },
+    {
+      "event_id": "e065",
+      "source_line": 108,
+      "timestamp": "2026-08-09T18:27:08.216+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee600110000000000000000000057"
+    },
+    {
+      "event_id": "e066",
+      "source_line": 110,
+      "timestamp": "2026-08-09T18:27:08.489+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee600110000000000000000000057"
+    },
+    {
+      "event_id": "e067",
+      "source_line": 112,
+      "timestamp": "2026-08-09T18:27:08.713+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee600110000000000000000000057"
+    },
+    {
+      "event_id": "e068",
+      "source_line": 114,
+      "timestamp": "2026-08-09T18:27:08.985+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee600110000000000000000000057"
+    },
+    {
+      "event_id": "e069",
+      "source_line": 116,
+      "timestamp": "2026-08-09T18:27:19.469+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f"
+    },
+    {
+      "event_id": "e070",
+      "source_line": 118,
+      "timestamp": "2026-08-09T18:27:19.968+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f"
+    },
+    {
+      "event_id": "e071",
+      "source_line": 120,
+      "timestamp": "2026-08-09T18:27:20.413+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f"
+    },
+    {
+      "event_id": "e072",
+      "source_line": 122,
+      "timestamp": "2026-08-09T18:27:20.909+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f"
+    },
+    {
+      "event_id": "e073",
+      "source_line": 124,
+      "timestamp": "2026-08-09T18:27:21.448+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f"
+    },
+    {
+      "event_id": "e074",
+      "source_line": 126,
+      "timestamp": "2026-08-09T18:27:21.900+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f"
+    },
+    {
+      "event_id": "e075",
+      "source_line": 128,
+      "timestamp": "2026-08-09T18:27:22.349+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f"
+    },
+    {
+      "event_id": "e076",
+      "source_line": 130,
+      "timestamp": "2026-08-09T18:27:22.844+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f"
+    },
+    {
+      "event_id": "e077",
+      "source_line": 132,
+      "timestamp": "2026-08-09T18:27:23.345+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f"
+    },
+    {
+      "event_id": "e078",
+      "source_line": 134,
+      "timestamp": "2026-08-09T18:27:23.833+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f"
+    },
+    {
+      "event_id": "e079",
+      "source_line": 136,
+      "timestamp": "2026-08-09T18:27:24.285+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f"
+    },
+    {
+      "event_id": "e080",
+      "source_line": 138,
+      "timestamp": "2026-08-09T18:27:24.781+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f"
+    },
+    {
+      "event_id": "e081",
+      "source_line": 140,
+      "timestamp": "2026-08-09T18:27:25.272+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f"
+    },
+    {
+      "event_id": "e082",
+      "source_line": 142,
+      "timestamp": "2026-08-09T18:27:25.769+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f"
+    },
+    {
+      "event_id": "e083",
+      "source_line": 144,
+      "timestamp": "2026-08-09T18:27:26.221+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f"
+    },
+    {
+      "event_id": "e084",
+      "source_line": 146,
+      "timestamp": "2026-08-09T18:27:26.713+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f"
+    },
+    {
+      "event_id": "e085",
+      "source_line": 148,
+      "timestamp": "2026-08-09T18:27:27.209+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f"
+    },
+    {
+      "event_id": "e086",
+      "source_line": 150,
+      "timestamp": "2026-08-09T18:27:27.703+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f"
+    },
+    {
+      "event_id": "e087",
+      "source_line": 152,
+      "timestamp": "2026-08-09T18:27:28.196+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f"
+    },
+    {
+      "event_id": "e088",
+      "source_line": 154,
+      "timestamp": "2026-08-09T18:27:28.650+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f"
+    },
+    {
+      "event_id": "e089",
+      "source_line": 156,
+      "timestamp": "2026-08-09T18:27:29.145+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f"
+    },
+    {
+      "event_id": "e090",
+      "source_line": 158,
+      "timestamp": "2026-08-09T18:27:29.641+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f"
+    },
+    {
+      "event_id": "e091",
+      "source_line": 160,
+      "timestamp": "2026-08-09T18:27:30.133+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f"
+    },
+    {
+      "event_id": "e092",
+      "source_line": 162,
+      "timestamp": "2026-08-09T18:27:30.585+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f"
+    },
+    {
+      "event_id": "e093",
+      "source_line": 164,
+      "timestamp": "2026-08-09T18:27:31.081+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f"
+    },
+    {
+      "event_id": "e094",
+      "source_line": 166,
+      "timestamp": "2026-08-09T18:27:31.573+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f"
+    },
+    {
+      "event_id": "e095",
+      "source_line": 168,
+      "timestamp": "2026-08-09T18:27:32.069+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f"
+    },
+    {
+      "event_id": "e096",
+      "source_line": 170,
+      "timestamp": "2026-08-09T18:27:32.520+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f"
+    },
+    {
+      "event_id": "e097",
+      "source_line": 172,
+      "timestamp": "2026-08-09T18:27:33.012+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f"
+    },
+    {
+      "event_id": "e098",
+      "source_line": 174,
+      "timestamp": "2026-08-09T18:27:33.509+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f"
+    },
+    {
+      "event_id": "e099",
+      "source_line": 176,
+      "timestamp": "2026-08-09T18:27:34.005+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f"
+    },
+    {
+      "event_id": "e100",
+      "source_line": 178,
+      "timestamp": "2026-08-09T18:27:34.505+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f"
+    },
+    {
+      "event_id": "e101",
+      "source_line": 180,
+      "timestamp": "2026-08-09T18:27:34.949+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f"
+    },
+    {
+      "event_id": "e102",
+      "source_line": 182,
+      "timestamp": "2026-08-09T18:27:35.445+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f"
+    },
+    {
+      "event_id": "e103",
+      "source_line": 184,
+      "timestamp": "2026-08-09T18:27:35.940+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d430b7d0dd40bf90d3d6f"
+    },
+    {
+      "event_id": "e104",
+      "source_line": 186,
+      "timestamp": "2026-08-09T18:27:39.807+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "10122005230011000000000000000000007b"
+    },
+    {
+      "event_id": "e105",
+      "source_line": 188,
+      "timestamp": "2026-08-09T18:27:40.033+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012200785001100000000000000000000df"
+    },
+    {
+      "event_id": "e106",
+      "source_line": 190,
+      "timestamp": "2026-08-09T18:27:40.305+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012200267001100000000000000000000bc"
+    },
+    {
+      "event_id": "e107",
+      "source_line": 192,
+      "timestamp": "2026-08-09T18:27:40.528+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "10122001b80011000000000000000000000c"
+    },
+    {
+      "event_id": "e108",
+      "source_line": 194,
+      "timestamp": "2026-08-09T18:27:40.801+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012200cad0011000000000000000000000c"
+    },
+    {
+      "event_id": "e109",
+      "source_line": 196,
+      "timestamp": "2026-08-09T18:27:41.024+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201c61001100000000000000000000d0"
+    },
+    {
+      "event_id": "e110",
+      "source_line": 198,
+      "timestamp": "2026-08-09T18:27:41.293+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201e37001100000000000000000000a8"
+    },
+    {
+      "event_id": "e111",
+      "source_line": 200,
+      "timestamp": "2026-08-09T18:27:41.564+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee600110000000000000000000057"
+    },
+    {
+      "event_id": "e112",
+      "source_line": 202,
+      "timestamp": "2026-08-09T18:27:41.789+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201f2700110000000000000000000099"
+    },
+    {
+      "event_id": "e113",
+      "source_line": 204,
+      "timestamp": "2026-08-09T18:27:42.013+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201e73001100000000000000000000e4"
+    },
+    {
+      "event_id": "e114",
+      "source_line": 206,
+      "timestamp": "2026-08-09T18:27:42.329+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee600110000000000000000000057"
+    },
+    {
+      "event_id": "e115",
+      "source_line": 208,
+      "timestamp": "2026-08-09T18:27:42.509+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ea500110000000000000000000016"
+    },
+    {
+      "event_id": "e116",
+      "source_line": 210,
+      "timestamp": "2026-08-09T18:27:42.733+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201eff00110000000000000000000070"
+    },
+    {
+      "event_id": "e117",
+      "source_line": 212,
+      "timestamp": "2026-08-09T18:27:43.008+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee600110000000000000000000057"
+    },
+    {
+      "event_id": "e118",
+      "source_line": 214,
+      "timestamp": "2026-08-09T18:27:43.229+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201e8c001100000000000000000000fd"
+    },
+    {
+      "event_id": "e119",
+      "source_line": 216,
+      "timestamp": "2026-08-09T18:27:43.501+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201eff00110000000000000000000070"
+    },
+    {
+      "event_id": "e120",
+      "source_line": 218,
+      "timestamp": "2026-08-09T18:27:43.724+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee600110000000000000000000057"
+    },
+    {
+      "event_id": "e121",
+      "source_line": 220,
+      "timestamp": "2026-08-09T18:27:43.992+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee600110000000000000000000057"
+    },
+    {
+      "event_id": "e122",
+      "source_line": 222,
+      "timestamp": "2026-08-09T18:27:44.224+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee600110000000000000000000057"
+    },
+    {
+      "event_id": "e123",
+      "source_line": 224,
+      "timestamp": "2026-08-09T18:27:44.489+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee600110000000000000000000057"
+    },
+    {
+      "event_id": "e124",
+      "source_line": 226,
+      "timestamp": "2026-08-09T18:27:44.717+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee600110000000000000000000057"
+    },
+    {
+      "event_id": "e125",
+      "source_line": 228,
+      "timestamp": "2026-08-09T18:27:44.985+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee600110000000000000000000057"
+    },
+    {
+      "event_id": "e126",
+      "source_line": 230,
+      "timestamp": "2026-08-09T18:27:45.208+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee600110000000000000000000057"
+    },
+    {
+      "event_id": "e127",
+      "source_line": 232,
+      "timestamp": "2026-08-09T18:27:45.479+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee600110000000000000000000057"
+    },
+    {
+      "event_id": "e128",
+      "source_line": 234,
+      "timestamp": "2026-08-09T18:27:45.705+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee600110000000000000000000057"
+    },
+    {
+      "event_id": "e129",
+      "source_line": 236,
+      "timestamp": "2026-08-09T18:27:45.973+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee600110000000000000000000057"
+    },
+    {
+      "event_id": "e130",
+      "source_line": 238,
+      "timestamp": "2026-08-09T18:27:56.413+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b"
+    },
+    {
+      "event_id": "e131",
+      "source_line": 240,
+      "timestamp": "2026-08-09T18:27:56.907+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b"
+    },
+    {
+      "event_id": "e132",
+      "source_line": 242,
+      "timestamp": "2026-08-09T18:27:57.405+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b"
+    },
+    {
+      "event_id": "e133",
+      "source_line": 244,
+      "timestamp": "2026-08-09T18:27:57.852+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b"
+    },
+    {
+      "event_id": "e134",
+      "source_line": 246,
+      "timestamp": "2026-08-09T18:27:58.349+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b"
+    },
+    {
+      "event_id": "e135",
+      "source_line": 248,
+      "timestamp": "2026-08-09T18:27:58.845+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b"
+    },
+    {
+      "event_id": "e136",
+      "source_line": 250,
+      "timestamp": "2026-08-09T18:27:59.341+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b"
+    },
+    {
+      "event_id": "e137",
+      "source_line": 252,
+      "timestamp": "2026-08-09T18:27:59.788+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b"
+    },
+    {
+      "event_id": "e138",
+      "source_line": 254,
+      "timestamp": "2026-08-09T18:28:00.284+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b"
+    },
+    {
+      "event_id": "e139",
+      "source_line": 256,
+      "timestamp": "2026-08-09T18:28:00.779+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b"
+    },
+    {
+      "event_id": "e140",
+      "source_line": 258,
+      "timestamp": "2026-08-09T18:28:01.272+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b"
+    },
+    {
+      "event_id": "e141",
+      "source_line": 260,
+      "timestamp": "2026-08-09T18:28:01.724+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b"
+    },
+    {
+      "event_id": "e142",
+      "source_line": 262,
+      "timestamp": "2026-08-09T18:28:02.219+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b"
+    },
+    {
+      "event_id": "e143",
+      "source_line": 264,
+      "timestamp": "2026-08-09T18:28:02.716+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b"
+    },
+    {
+      "event_id": "e144",
+      "source_line": 266,
+      "timestamp": "2026-08-09T18:28:03.208+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b"
+    },
+    {
+      "event_id": "e145",
+      "source_line": 268,
+      "timestamp": "2026-08-09T18:28:03.661+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b"
+    },
+    {
+      "event_id": "e146",
+      "source_line": 270,
+      "timestamp": "2026-08-09T18:28:04.201+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b"
+    },
+    {
+      "event_id": "e147",
+      "source_line": 272,
+      "timestamp": "2026-08-09T18:28:04.648+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b"
+    },
+    {
+      "event_id": "e148",
+      "source_line": 274,
+      "timestamp": "2026-08-09T18:28:05.145+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b"
+    },
+    {
+      "event_id": "e149",
+      "source_line": 276,
+      "timestamp": "2026-08-09T18:28:05.641+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b"
+    },
+    {
+      "event_id": "e150",
+      "source_line": 278,
+      "timestamp": "2026-08-09T18:28:06.088+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b"
+    },
+    {
+      "event_id": "e151",
+      "source_line": 280,
+      "timestamp": "2026-08-09T18:28:06.589+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b"
+    },
+    {
+      "event_id": "e152",
+      "source_line": 282,
+      "timestamp": "2026-08-09T18:28:07.080+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b"
+    },
+    {
+      "event_id": "e153",
+      "source_line": 284,
+      "timestamp": "2026-08-09T18:28:07.572+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b"
+    },
+    {
+      "event_id": "e154",
+      "source_line": 286,
+      "timestamp": "2026-08-09T18:28:08.029+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b"
+    },
+    {
+      "event_id": "e155",
+      "source_line": 288,
+      "timestamp": "2026-08-09T18:28:08.521+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b"
+    },
+    {
+      "event_id": "e156",
+      "source_line": 290,
+      "timestamp": "2026-08-09T18:28:09.013+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b"
+    },
+    {
+      "event_id": "e157",
+      "source_line": 292,
+      "timestamp": "2026-08-09T18:28:09.508+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b"
+    },
+    {
+      "event_id": "e158",
+      "source_line": 294,
+      "timestamp": "2026-08-09T18:28:09.961+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b"
+    },
+    {
+      "event_id": "e159",
+      "source_line": 296,
+      "timestamp": "2026-08-09T18:28:10.453+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b"
+    },
+    {
+      "event_id": "e160",
+      "source_line": 298,
+      "timestamp": "2026-08-09T18:28:10.948+00:00",
+      "uuid": "0000fff1-0000-1000-8000-00805f9b34fb",
+      "opcode": 16,
+      "hex": "1012201ee601210d3a0b860dbc0bea0d404b"
+    }
+  ]
+}
